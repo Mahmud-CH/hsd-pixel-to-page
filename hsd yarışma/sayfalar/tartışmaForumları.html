@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>craigslist.tr - Topluluk</title>
+    <meta name="description" content="Craigslist Topluluk (Community) Sayfası." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="js/sayfalar.js" defer></script>
+</head>
+<body class="homepage tr">
+ 
+    <header class="global-header">
+        <div class="header-left">
+            <a class="header-logo" href="../craiglist.html" aria-label="Craigslist Anasayfa">
+                <span class="peace-symbol">☮</span>
+                <span class="logo-text">Craigslist</span><span class="country-code">.tr</span>
+            </a>
+            
+            <div class="search-and-post-container">
+                <div class="search-container">
+                    <input type="text" placeholder="craigslist'te ara" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="location-selector" id="locationSelector">
+                <span class="location-icon">📍</span>
+                <span class="location-text">türkiye</span>
+                <span class="dropdown-arrow">▼</span>
+                
+                <div class="location-dropdown-menu">
+                    <h5 class="dropdown-title">Şehir Seçin</h5>
+                    <ul class="dropdown-links">
+                        <li><a href="#">istanbul</a></li>
+                        <li><a href="#">ankara</a></li>
+                        <li><a href="#">izmir</a></li>
+                        <li class="separator"></li>
+                        <li class="global-link"><a href="#">diğer lokasyonlar (global)</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-actions">
+                <div class="action-item" data-tooltip="Favoriler">
+                    <span class="action-icon">⭐</span>
+                    <span class="action-text">favoriler</span>
+                </div>
+                <div class="action-item" data-tooltip="Hesap">
+                    <span class="action-icon">👤</span>
+                    <span class="action-text">hesap</span>
+                </div>
+            </div>
+            <button class="dark-mode-toggle" id="darkModeToggle" data-tooltip="Koyu Mod">
+                🌙
+            </button>
+            <div class="language-selector">
+                <div class="custom-select-wrapper">
+                    <select>
+                        <option>türkçe</option>
+                        <option>english</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="page-grid">
+    <aside class="leftbar">
+        
+        <div class="community-section">
+            <h3 class="category-title">tartışma forumları</h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">açık</a></li>
+                      <li><a href="#">apple</a></li>
+                      <li><a href="#">araba</a></li>
+                      <li><a href="#">ateist</a></li>
+                      <li><a href="#">bahçe</a></li>
+                      <li><a href="#">bilgisayar</a></li>
+                      <li><a href="#">bilim</a></li>
+                      <li><a href="#">bisiklet</a></li>
+                      <li><a href="#">boşanma</a></li>
+                      <li><a href="#">cosmos</a></li>
+                      <li><a href="#">din</a></li>
+                      <li><a href="#">diyet</a></li>
+                      <li><a href="#">ebeveyn</a></li>
+                      <li><a href="#">ekoloji</a></li>
+                      <li><a href="#">felsefe</a></li>
+                      <li><a href="#">film</a></li>
+                      <li><a href="#">fotoğ</a></li>
+                      <li><a href="#">görgü</a></li>
+                      <li><a href="#">görüş</a></li>
+                      <li><a href="#">güzellik</a></li>
+                      <li><a href="#">haiku</a></li>
+                      <li><a href="#">hukuk</a></li>
+                      <li><a href="#">iş ilanları</a></li>
+                      <li><a href="#">iyileşme</a></li>
+                      <li><a href="#">kalacak yer</a></li>
+                      <li><a href="#">müzik</a></li>
+                      <li><a href="#">oyunlar</a></li>
+                      <li><a href="#">ölüm</a></li>
+                      <li><a href="#">romantik</a></li>
+                      <li><a href="#">ruhani</a></li>
+                      <li><a href="#">sanat</a></li>
+                      <li><a href="#">seyahat</a></li>
+                      <li><a href="#">sözcükler</a></li>
+                      <li><a href="#">spor</a></li>
+                      <li><a href="#">super</a></li>
+                      <li><a href="#">tamirat</a></li>
+                      <li><a href="#">tarih</a></li>
+                      <li><a href="#">tutumlu</a></li>
+                      <li><a href="#">tv</a></li>
+                      <li><a href="#">ünlüler</a></li>
+                      <li><a href="#">vegan</a></li>
+                      <li><a href="#">vergi</a></li>
+                  </ul>
+              </div>
+        
+    </aside>
+
+    </main>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

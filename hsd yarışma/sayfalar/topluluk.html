@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>craigslist.tr - Topluluk</title>
+    <meta name="description" content="Craigslist Topluluk (Community) Sayfası." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="js/sayfalar.js" defer></script>
+</head>
+<body class="homepage tr">
+ 
+    <header class="global-header">
+        <div class="header-left">
+            <a class="header-logo" href="../craiglist.html" aria-label="Craigslist Anasayfa">
+                <span class="peace-symbol">☮</span>
+                <span class="logo-text">Craigslist</span><span class="country-code">.tr</span>
+            </a>
+            
+            <div class="search-and-post-container">
+                <div class="search-container">
+                    <input type="text" placeholder="craigslist'te ara" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="location-selector" id="locationSelector">
+                <span class="location-icon">📍</span>
+                <span class="location-text">türkiye</span>
+                <span class="dropdown-arrow">▼</span>
+                
+                <div class="location-dropdown-menu">
+                    <h5 class="dropdown-title">Şehir Seçin</h5>
+                    <ul class="dropdown-links">
+                        <li><a href="#">istanbul</a></li>
+                        <li><a href="#">ankara</a></li>
+                        <li><a href="#">izmir</a></li>
+                        <li class="separator"></li>
+                        <li class="global-link"><a href="#">diğer lokasyonlar (global)</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-actions">
+                <div class="action-item" data-tooltip="Favoriler">
+                    <span class="action-icon">⭐</span>
+                    <span class="action-text">favoriler</span>
+                </div>
+                <div class="action-item" data-tooltip="Hesap">
+                    <span class="action-icon">👤</span>
+                    <span class="action-text">hesap</span>
+                </div>
+            </div>
+            <button class="dark-mode-toggle" id="darkModeToggle" data-tooltip="Koyu Mod">
+                🌙
+            </button>
+            <div class="language-selector">
+                <div class="custom-select-wrapper">
+                    <select>
+                        <option>türkçe</option>
+                        <option>english</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="page-grid">
+    <aside class="leftbar">
+        
+        <div class="community-section">
+            <h4 class="category-title">topluluk</h4>
+            <ul class="category-links">
+                <li><a href="#">gönüllüler</a></li>
+                <li><a href="#">gruplar</a></li>
+                <li><a href="#">kaybedilmiş</a></li>
+                <li><a href="#">bağlantılar</a></li>
+                <li><a href="#">kayıp eşya</a></li>
+                <li><a href="#">müzisyenler</a></li>
+                <li><a href="#">politika</a></li>
+                <li><a href="#">sanatçılar</a></li>
+                <li><a href="#">yerel haberler</a></li>
+            </ul>
+        </div>
+        
+    </aside>
+
+    </main>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

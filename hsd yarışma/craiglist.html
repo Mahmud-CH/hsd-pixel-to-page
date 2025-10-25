@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>craigslist.tr - ilanlar, işler, emlak, hizmetler</title>
+    <meta name="description" content="craigslist for Türkiye: jobs, apartments, for sale, services, community, and events." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <script src="app.js" defer></script>
+</head>
+<body class="homepage tr">
+ 
+ <header class="global-header">
+     <div class="header-left">
+          <a class="header-logo" href="../craiglist.html" aria-label="Craigslist Anasayfa">
+              <span class="peace-symbol">☮</span>
+              <span class="logo-text">Craigslist</span><span class="country-code">.tr</span>
+          </a>
+          
+          <div class="search-and-post-container">
+              <a class="post-ad-btn" href="#">post ad</a>
+              <div class="search-container">
+                  <input type="text" placeholder="craigslist'te ara" class="search-input">
+                  <span class="search-icon">🔍</span>
+              </div>
+          </div>
+     </div>
+     
+     <div class="header-right">
+        <div class="location-selector" id="locationSelector">
+          <span class="location-icon">📍</span>
+          <span class="location-text">türkiye</span>
+          <span class="dropdown-arrow">▼</span>
+          
+          <div class="location-dropdown-menu">
+              <h5 class="dropdown-title">Şehir Seçin</h5>
+              <ul class="dropdown-links">
+                  <li><a href="#">istanbul</a></li>
+                  <li><a href="#">ankara</a></li>
+                  <li><a href="#">izmir</a></li>
+                  <li class="separator"></li>
+                  <li class="global-link"><a href="#">diğer lokasyonlar (global)</a></li>
+              </ul>
+          </div>
+        </div>
+        
+        <div class="user-actions">
+            
+            <div class="action-item" data-tooltip="Favoriler">
+                <span class="action-icon">⭐</span>
+                <span class="action-text">favoriler</span>
+            </div>
+            <div class="action-item" data-tooltip="Hesap">
+                <span class="action-icon">👤</span>
+                <span class="action-text">hesap</span>
+            </div>
+        </div>
+          <button class="dark-mode-toggle" id="darkModeToggle" data-tooltip="Koyu Mod">
+              🌙
+            </button>
+          <div class="language-selector">
+              <div class="custom-select-wrapper">
+                  <select>
+                      <option>türkçe</option>
+                      <option>english</option>
+                  </select>
+              </div>
+          </div>
+     </div>
+ </header>
+
+ <main class="page-grid">
+     <aside class="leftbar">
+          <div class="calendar-section">
+              <h4 class="calendar-title">etkinlik takvimi</h4>
+              <table id="cal" class="calendar" aria-label="Etkinlik takvimi">
+                  <thead>
+                      <tr><th>Pzt</th><th>Sal</th><th>Çar</th><th>Per</th><th>Cum</th><th>Cmt</th><th>Paz</th></tr>
+                  </thead>
+                  <tbody>
+                      <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                      <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                      <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                      <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+                      <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+                  </tbody>
+              </table>
+          </div>
+
+          <div class="help-section">
+              <ul class="help-links">
+                  <li><a href="#">yardım, hukuki yaptırım</a></li>
+                  <li><a href="#">sahtekarlık kaçının</a></li>
+                  <li><a href="#">kişisel güvenliğiniz için</a></li>
+              </ul>
+          </div>
+
+          <div class="about-section">
+              <ul class="about-links">
+                  <li><a href="#">craigslist hakkında</a></li>
+                  <li><a href="#">craigslist'in-en-iyileri</a></li>
+                  <li><a href="#">what's new</a></li>
+                  <li><a href="#">sistem durumu</a></li>
+              </ul>
+          </div>
+
+          <div class="charitable-section">
+              <h4 class="charitable-title">craigslist charitable</h4>
+              <div class="charitable-icons">
+                  <span class="animal-icon">🐷</span>
+                  <span class="animal-icon">🐔</span>
+                  <span class="animal-icon">🐟</span>
+                  <span class="animal-icon">🐱</span>
+              </div>
+              <h4 class="philanthropies-title">craig newmark philanthropies</h4>
+          </div>
+     </aside>
+
+     <section class="center">
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/topluluk.html">topluluk</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">gönüllüler</a></li>
+                      <li><a href="#">gruplar</a></li>
+                      <li><a href="#">kaybedilmiş</a></li>
+                      <li><a href="#">bağlantılar</a></li>
+                      <li><a href="#">kayıp eşya</a></li>
+                      <li><a href="#">müzisyenler</a></li>
+                      <li><a href="#">politika</a></li>
+                      <li><a href="#">sanatçılar</a></li>
+                      <li><a href="#">yerel haberler</a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/kalacakYer.html">kalacak yer</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">daire / ev arayanlar</a></li>
+                      <li><a href="#">daire / konut</a></li>
+                      <li><a href="#">devren kiralık / sezonluk</a></li>
+                      <li><a href="#">ev degiş tokuşu</a></li>
+                      <li><a href="#">kiralık odalar</a></li>
+                      <li><a href="#">oda arayanlar <span class="red-dot">•</span></a></li>
+                      <li><a href="#">ofis / ticari</a></li>
+                      <li><a href="#">otopark / depolama</a></li>
+                      <li><a href="#">satılık emlak</a></li>
+                      <li><a href="#">tatil kiralıklar</a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/işİlanları.html">iş ilanları</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">bioteknoloji/mühendislik</a></li>
+                      <li><a href="#">devlet</a></li>
+                      <li><a href="#">eğitim öğretim</a></li>
+                      <li><a href="#">emlak</a></li>
+                      <li><a href="#">etc / misc</a></li>
+                      <li><a href="#">genel işçilik</a></li>
+                      <li><a href="#">güvenlik</a></li>
+                      <li><a href="#">hukuk</a></li>
+                      <li><a href="#">insan kaynakları</a></li>
+                      <li><a href="#">işletmecilik / yönetim</a></li>
+                      <li><a href="#">kuaför / spa / fitness</a></li>
+                      <li><a href="#">mimarlık / mühendislik</a></li>
+                      <li><a href="#">muhasebe+finans</a></li>
+                      <li><a href="#">müşteri hizmetleri</a></li>
+                      <li><a href="#">pazarlama/halkla ilişkiler</a></li>
+                      <li><a href="#">perakende / toptan</a></li>
+                      <li><a href="#">sanat / medya / tasarım</a></li>
+                      <li><a href="#">satış / iş geliştirme</a></li>
+                      <li><a href="#">sistem / network</a></li>
+                      <li><a href="#">sivil toplum sektoru</a></li>
+                      <li><a href="#">teknik destek</a></li>
+                      <li><a href="#">tıp / sağlık</a></li>
+                      <li><a href="#">tv / film / video</a></li>
+                      <li><a href="#">ulaşım</a></li>
+                      <li><a href="#">üretim</a></li>
+                      <li><a href="#">web / bilgi tasarımı</a></li>
+                      <li><a href="#">yazarlık / redaksiyon</a></li>
+                      <li><a href="#">yazılım / kalite güvence</a></li>
+                      <li><a href="#">yiyecek / içecek / otelcilik</a></li>
+                      <li><a href="#">yönetim / ofis</a></li>
+                      <li><a href="#">zanaat</a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/hizmetler.html">hizmetler</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">bilgisayar</a></li>
+                      <li><a href="#">bisiklet</a></li>
+                      <li><a href="#">cep/mobil</a></li>
+                      <li><a href="#">çiftlik+bahçe</a></li>
+                      <li><a href="#">denizcilik</a></li>
+                      <li><a href="#">dersler</a></li>
+                      <li><a href="#">emlak</a></li>
+                      <li><a href="#">etkinlik</a></li>
+                      <li><a href="#">evcil hayvan</a></li>
+                      <li><a href="#">ev gereçleri</a></li>
+                      <li><a href="#">finansal</a></li>
+                      <li><a href="#">zanaatkarlık</a></li>
+                      <li><a href="#">güzellik</a></li>
+                      <li><a href="#">health/well</a></li>
+                      <li><a href="#">hukuk</a></li>
+                      <li><a href="#">işçilik / nakliye</a></li>
+                      <li><a href="#">kreatif</a></li>
+                      <li><a href="#">küçük işletme</a></li>
+                      <li><a href="#">ilanları</a></li>
+                      <li><a href="#">otomotiv</a></li>
+                      <li><a href="#">seyahat/tatil</a></li>
+                      <li><a href="#">yaz/düz/çev</a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/satılık.html">satılık</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">alet edevat</a></li>
+                      <li><a href="#">antika</a></li>
+                      <li><a href="#">aranıyor</a></li>
+                      <li><a href="#">atv /utv/kar</a></li>
+                      <li><a href="#">aviation</a></li>
+                      <li><a href="#">bebek+çoc</a></li>
+                      <li><a href="#">bedava</a></li>
+                      <li><a href="#">biletler</a></li>
+                      <li><a href="#">bilgisayar</a></li>
+                      <li><a href="#">bilgisayar parç</a></li>
+                      <li><a href="#">bisiklet</a></li>
+                      <li><a href="#">bisiklt parç</a></li>
+                      <li><a href="#">cd / dvd / vhs</a></li>
+                      <li><a href="#">cep telefonları</a></li>
+                      <li><a href="#">çiftlik+bahçe</a></li>
+                      <li><a href="#">degis tokuş</a></li>
+                      <li><a href="#">elektrikli ev aletleri</a></li>
+                      <li><a href="#">elektronik</a></li>
+                      <li><a href="#">ev gereçleri</a></li>
+                      <li><a href="#">fotoğraf+video</a></li>
+                      <li><a href="#">genel</a></li>
+                      <li><a href="#">giyim+aksesuar</a></li>
+                      <li><a href="#">güzellik+sağlık</a></li>
+                      <li><a href="#">güzel sanatlar</a></li>
+                      <li><a href="#">işletme</a></li>
+                      <li><a href="#">iş mak</a></li>
+                      <li><a href="#">kişisel eşya satışı</a></li>
+                      <li><a href="#">kitaplar</a></li>
+                      <li><a href="#">koleksiyon</a></li>
+                      <li><a href="#">malzemeler</a></li>
+                      <li><a href="#">mobilya</a></li>
+                      <li><a href="#">motorsiklet</a></li>
+                      <li><a href="#">mot yed par</a></li>
+                      <li><a href="#">mücevher</a></li>
+                      <li><a href="#">müzik aletleri</a></li>
+                      <li><a href="#">otomobil/diğer</a></li>
+                      <li><a href="#">vasıtalar</a></li>
+                      <li><a href="#">otomotiv yedek</a></li>
+                      <li><a href="#">parça</a></li>
+                      <li><a href="#">oyuncaklar+oyunlar</a></li>
+                      <li><a href="#">römork</a></li>
+                      <li><a href="#">rv + kamp</a></li>
+                      <li><a href="#">spor</a></li>
+                      <li><a href="#">tekneler</a></li>
+                      <li><a href="#">tekne parça</a></li>
+                      <li><a href="#">video oyunları</a></li>
+                      <li><a href="#">wheels+tires</a></li>
+                  </ul>
+              </div>
+          </section>
+
+          <section class="col">
+              <h3 class="category-title"><a href="sayfalar/tartışmaForumları.html">tartışma forumları</a></h3>
+              <div class="category-links">
+                  <ul>
+                      <li><a href="#">açık</a></li>
+                      <li><a href="#">apple</a></li>
+                      <li><a href="#">araba</a></li>
+                      <li><a href="#">ateist</a></li>
+                      <li><a href="#">bahçe</a></li>
+                      <li><a href="#">bilgisayar</a></li>
+                      <li><a href="#">bilim</a></li>
+                      <li><a href="#">bisiklet</a></li>
+                      <li><a href="#">boşanma</a></li>
+                      <li><a href="#">cosmos</a></li>
+                      <li><a href="#">din</a></li>
+                      <li><a href="#">diyet</a></li>
+                      <li><a href="#">ebeveyn</a></li>
+                      <li><a href="#">ekoloji</a></li>
+                      <li><a href="#">felsefe</a></li>
+                      <li><a href="#">film</a></li>
+                      <li><a href="#">fotoğ</a></li>
+                      <li><a href="#">görgü</a></li>
+                      <li><a href="#">görüş</a></li>
+                      <li><a href="#">güzellik</a></li>
+                      <li><a href="#">haiku</a></li>
+                      <li><a href="#">hukuk</a></li>
+                      <li><a href="#">iş ilanları</a></li>
+                      <li><a href="#">iyileşme</a></li>
+                      <li><a href="#">kalacak yer</a></li>
+                      <li><a href="#">müzik</a></li>
+                      <li><a href="#">oyunlar</a></li>
+                      <li><a href="#">ölüm</a></li>
+                      <li><a href="#">romantik</a></li>
+                      <li><a href="#">ruhani</a></li>
+                      <li><a href="#">sanat</a></li>
+                      <li><a href="#">seyahat</a></li>
+                      <li><a href="#">sözcükler</a></li>
+                      <li><a href="#">spor</a></li>
+                      <li><a href="#">super</a></li>
+                      <li><a href="#">tamirat</a></li>
+                      <li><a href="#">tarih</a></li>
+                      <li><a href="#">tutumlu</a></li>
+                      <li><a href="#">tv</a></li>
+                      <li><a href="#">ünlüler</a></li>
+                      <li><a href="#">vegan</a></li>
+                      <li><a href="#">vergi</a></li>
+                  </ul>
+              </div>
+          </section>
+     </section>
+
+     <aside class="rightbar">
+          <div class="location-section">
+              <h5 class="location-title">avrupa</h5>
+              <ul class="location-links">
+                  <li><a href="#">amsterdam</a></li>
+                  <li><a href="#">berlin</a></li>
+                  <li><a href="#">brüksel</a></li>
+                  <li><a href="#">budapeşte</a></li>
+                  <li><a href="#">cote d'azur</a></li>
+                  <li><a href="#">dublin</a></li>
+                  <li><a href="#">edinburgh</a></li>
+                  <li><a href="#">floransa</a></li>
+                  <li><a href="#">kopenhag</a></li>
+                  <li><a href="#">londra</a></li>
+                  <li><a href="#">münih</a></li>
+                  <li><a href="#">oslo</a></li>
+                  <li><a href="#">oxford</a></li>
+                  <li><a href="#">paris</a></li>
+                  <li><a href="#">prag</a></li>
+                  <li><a href="#">roma</a></li>
+                  <li><a href="#">stokholm</a></li>
+                  <li><a href="#">venedik/veneto</a></li>
+              </ul>
+          </div>
+
+          <div class="additional-sections">
+              <h5 class="section-title">amerika/kanada</h5>
+              <h5 class="section-title">cl global</h5>
+          </div>
+
+          <div class="job-buttons">
+              <div class="job-button">ufak işler</div>
+              <div class="job-button">özgeçmişler</div>
+          </div>
+     </aside>
+ </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">yardım</a>
+            <a href="#">güvenlik</a>
+            <a href="#">gizlilik</a>
+            <a href="#">kurallar</a>
+            <a href="#">hakkında</a>
+            <a href="#">app</a>
+            <a href="#">sitemap</a>
+        </div>
+        <div class="copyright">&copy; <span id="year"></span> craigslist</div>
+    </footer>
+
+</body>
+</html>

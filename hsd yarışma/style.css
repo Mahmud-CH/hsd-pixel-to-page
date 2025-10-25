@@ -1,0 +1,1025 @@
+:root {
+  /* ==============================
+     LIGHT MODE (Now visibly colored)
+     ============================== */
+  --bg: #f7f4ff; /* CHANGED: Soft lavender for main body background */
+  --text: #333;
+  --link: #007bff;
+  --muted: #6c757d;
+  --border: #ccc5d8; /* CHANGED: More visible, subtle gray-purple border */
+  --light-gray: #fffafa; /* CHANGED: Very pale pink-gray for content cards, header, and footer */
+  --dropdown-shadow: 0 4px 6px rgba(0, 0, 0, 0.07); 
+
+  --purple: #6f42c1;
+  --purple-dark: #5a32a3; 
+  --purple-muted: #e6dff2; 
+  --green: #28a745;
+  --blue: #007bff;
+  --red: #dc3545;
+  --yellow: #ffc107;
+  
+  /* Typography */
+  --font-body: 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Georgia', serif;
+
+  /* Tooltip Variables */
+  --tooltip-color: #fff;
+}
+
+/* ==============================
+   DARK MODE (Deep Indigo and Vibrant Accents)
+   ============================== */
+body.dark-theme, :root.dark-theme {
+  --bg: #1e182a; /* Deep, rich indigo-purple for main body background */
+  --text: #e0e0e0;
+  --link: #84b0ff; /* Brighter blue link */
+  --muted: #a0a0a0;
+  --border: #403750; /* Lighter, more visible border */
+  --light-gray: #2a233b; /* Slightly lighter desaturated indigo for cards/surfaces */
+  --dropdown-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+  
+  --purple: #bb86fc;   /* Vibrant purple accent */
+  --purple-dark: #a56ef7; 
+  --purple-muted: #3a2a50; 
+  --green: #03dac6;     
+  --blue: #007bff;
+  --red: #ff5c5c;       
+  --yellow: #ffc107;
+  
+  --tooltip-color: var(--bg);
+}
+
+/* ==============================
+    Global Styles
+================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  width: 100%;  
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s; 
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==============================
+    Button Base and Styles
+================================= */
+.btn {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px; 
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:focus {
+  outline: 3px solid var(--purple-muted);
+  outline-offset: 2px;
+}
+
+/* Primary Button (Strongest Call to Action) */
+.btn-primary {
+  background-color: var(--purple);
+  color: var(--tooltip-color); 
+  border-color: var(--purple);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); 
+  text-decoration: none;
+}
+
+/* Secondary Button (Neutral Action) */
+.btn-secondary {
+  background-color: var(--light-gray);
+  color: var(--purple);
+  border-color: var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.btn-secondary:hover {
+  background-color: var(--purple-muted);
+  border-color: var(--purple);
+  color: var(--purple-dark);
+  text-decoration: none;
+}
+
+/* Tertiary/Ghost Button (Minimal Action) */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text);
+  border-color: transparent;
+  padding: 10px 15px;
+}
+
+.btn-ghost:hover {
+  background-color: var(--purple-muted);
+  color: var(--purple-dark);
+  text-decoration: none;
+}
+
+/* Button size modifiers (optional) */
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+
+/* ==============================
+    Header
+================================= */
+.global-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;  
+  padding: 15px 40px;
+  border-bottom: 1px solid var(--border);
+  background: var(--light-gray); /* Uses --light-gray for header/footer */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px; 
+  flex-grow: 1; 
+  flex-shrink: 0; 
+}
+
+.header-logo {
+  display: flex; 
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+  flex-shrink: 0;
+  white-space: nowrap; 
+}
+
+.peace-symbol {
+  font-size: 24px;
+  color: var(--purple);
+  margin-right: 8px; 
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--purple);
+  font-family: var(--font-heading);
+  display: inline-block;
+  margin-right: 0; 
+  line-height: 1; 
+}
+
+.country-code {
+  font-size: 20px;   
+  font-weight: 700;   
+  color: var(--text);   
+  display: inline-block;
+  margin-left: 0; 
+  line-height: 1; 
+}
+
+.search-and-post-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  flex-grow: 1; 
+}
+
+.post-ad-btn {
+  padding: 6px 15px; 
+  font-size: 13px;   
+  min-width: auto;
+  background: var(--purple);
+  color: var(--tooltip-color); 
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background 0.3s, box-shadow 0.3s;
+  white-space: nowrap;   
+  text-align: center;
+  flex-shrink: 0;
+  border: none; 
+  text-decoration: none; 
+}
+
+.post-ad-btn:hover {
+  background: var(--purple-dark);
+  text-decoration: none;
+  box-shadow: 0 3px 7px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+    Search Bar
+================================= */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: var(--bg); /* Search bar background uses --bg (the light purple tint) to blend */
+  border: 1px solid var(--border); 
+  border-radius: 50px;
+  flex-grow: 1; 
+  max-width: none; 
+  transition: box-shadow 0.2s ease, background 0.3s, border-color 0.3s;
+}
+
+/* Dark mode override for search bar */
+body.dark-theme .search-container {
+    background: var(--border); 
+    border: 1px solid var(--border);
+}
+
+
+.search-container:focus-within {
+    box-shadow: 0 0 0 2px var(--blue);
+    border-color: var(--blue);
+}
+
+.search-input {
+  padding: 8px 10px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;  
+  min-width: 100px;
+  outline: none; 
+  color: var(--text); 
+}
+
+.search-input::placeholder {
+  color: var(--muted);
+}
+
+.search-icon {
+  position: static;
+  transform: none;
+  margin-right: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ==============================
+    Dark Mode Toggle Button
+================================= */
+.dark-mode-toggle {
+  width: 40px; 
+  height: 40px; 
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg); /* Uses --bg for light mode to blend */
+  border: 1px solid var(--border);
+  font-size: 1.5em;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  font-weight: 600;
+  position: relative;
+  z-index: 10;
+}
+
+/* Dark mode override for toggle button */
+body.dark-theme .dark-mode-toggle {
+    background: var(--border); 
+}
+
+
+.dark-mode-toggle:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: var(--tooltip-color);
+}
+
+/* Tooltip (Default/Light Mode) */
+.dark-mode-toggle::after {
+  content: attr(data-tooltip); 
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px); 
+  background: var(--purple);
+  color: var(--tooltip-color);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s ease, visibility 0s linear 0s; 
+}
+
+/* Tooltip (Dark Mode) - OVERRIDE */
+body.dark-theme .dark-mode-toggle:hover::after {
+  content: "Aydınlık Mod"; 
+}
+
+.dark-mode-toggle::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0px); 
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--purple) transparent; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s ease, visibility 0s linear 0s; 
+}
+
+.dark-mode-toggle:hover::after,
+.dark-mode-toggle:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s linear 0s, transform 0.2s ease;
+}
+
+.dark-mode-toggle:hover::after {
+  transform: translateX(-50%) translateY(5px); 
+}
+
+.dark-mode-toggle:hover::before {
+  transform: translateX(-50%) translateY(0px); 
+}
+
+
+/* ==============================
+    Header Right 
+================================= */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------
+  LOCATION DROPDOWN STYLES
+  ---------------------------------
+*/
+.location-selector {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--purple);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;  
+  flex-shrink: 0;
+  position: relative;
+  padding: 8px 12px; 
+  border: 1px solid transparent; 
+  border-radius: 50px; 
+}
+
+.location-selector:hover,
+.location-selector.active {
+    background-color: var(--purple-muted); 
+    border-color: var(--border);
+    opacity: 1; 
+}
+
+.location-icon, .dropdown-arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease; 
+}
+
+.location-selector .dropdown-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.location-dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    right: 0; 
+    z-index: 1000; 
+    background-color: var(--light-gray); /* Card background */
+    border: 1px solid var(--border);
+    border-top: none; 
+    border-radius: 0 0 8px 8px; 
+    box-shadow: var(--dropdown-shadow);
+    min-width: 180px;
+    padding: 10px 0;
+    opacity: 0;
+    pointer-events: none; 
+    visibility: hidden; 
+    transform: translateY(-5px); 
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0s 0.15s; 
+}
+
+.location-selector.active .location-dropdown-menu {
+    opacity: 1; 
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0); 
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0s 0s;
+}
+
+.location-dropdown-menu .dropdown-title {
+    font-size: 0.9em;
+    color: var(--muted);
+    margin: 0 15px 5px;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.location-dropdown-menu .dropdown-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.location-dropdown-menu .dropdown-links li {
+    padding: 0;
+    margin: 0;
+}
+
+.location-dropdown-menu .dropdown-links li a {
+    display: block;
+    padding: 6px 15px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95em;
+}
+
+.location-dropdown-menu .dropdown-links li a:hover {
+    background-color: var(--purple-muted); 
+    color: var(--purple-dark);
+    text-decoration: none;
+}
+
+.location-dropdown-menu .dropdown-links .separator {
+    border-top: 1px solid var(--border);
+    margin: 5px 0;
+}
+
+.location-dropdown-menu .dropdown-links .global-link a {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--muted);
+}
+/* ---------------------------------
+  END LOCATION DROPDOWN STYLES
+  ---------------------------------
+*/
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.action-item {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;   
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: var(--bg); /* Blends with light mode background */
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+/* Dark mode override for action-item */
+body.dark-theme .action-item {
+    background: var(--border); 
+}
+
+.action-item:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.action-icon {
+  font-size: 18px;
+  color: var(--purple);
+  transition: color 0.3s;
+}
+
+.action-item:hover .action-icon {
+  color: var(--tooltip-color); 
+}
+
+.action-text {
+  display: none; 
+}
+
+/* ==============================
+    Custom Tooltip Logic
+================================= */
+.action-item::after {
+  content: attr(data-tooltip); 
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(-5px); 
+  background: var(--purple);
+  color: var(--tooltip-color);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s ease, visibility 0s linear 0s; 
+}
+
+.action-item::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0px); 
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--purple) transparent; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0s ease, visibility 0s linear 0s; 
+}
+
+.action-item:hover::after,
+.action-item:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s linear 0s, transform 0.2s ease;
+}
+
+.action-item:hover::after {
+  transform: translateX(-50%) translateY(5px); 
+}
+
+.action-item:hover::before {
+  transform: translateX(-50%) translateY(0px); 
+}
+
+.language-selector select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 13px;
+  background: var(--light-gray); 
+  color: var(--purple);
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+/* ==============================
+    Main Layout 
+================================= */
+.page-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  gap: 40px;
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Sidebar General Styling */
+.leftbar, .rightbar {
+  display: flex;
+  flex-direction: column;
+  background: var(--light-gray); /* Uses --light-gray for sidebars/cards */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05); 
+  gap: 25px;
+  transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Dark mode shadow */
+body.dark-theme .leftbar,
+body.dark-theme .rightbar {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+
+/* Left Sidebar */
+.calendar-section {
+  min-height: 250px; 
+}
+
+.calendar-title {
+  font-size: 16px;
+  color: var(--purple);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.calendar th, .calendar td {
+  border: none;
+  text-align: center;
+  padding: 6px 0;
+  width: 14.28%;  
+  height: 20px;
+}
+
+.calendar th {
+  background: transparent;
+  font-weight: normal;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.calendar td {
+  color: var(--text);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.calendar td:hover {
+  background-color: var(--purple-muted); 
+  cursor: pointer;
+}
+
+.calendar td.today {
+  background-color: var(--purple);
+  color: var(--tooltip-color); 
+  font-weight: 600;
+}
+
+/* Leftbar Links */
+.help-section, .about-section {
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+}
+
+.help-links a, .about-links a {
+  font-size: 14px;
+  color: var(--muted);
+  display: block;
+  padding: 3px 0;
+}
+
+.help-links a:hover, .about-links a:hover {
+  color: var(--purple);
+}
+
+/* Center Columns */
+.center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-left: 0; 
+  padding-right: 0;
+}
+
+.col {
+  padding: 0;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--purple);
+  margin-bottom: 15px;
+  border-bottom: 3px solid var(--purple);
+  padding-bottom: 5px;
+}
+
+.category-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.category-links a {
+  font-size: 15px;
+  color: var(--text);
+  padding: 2px 0;
+  display: block;
+  transition: all 0.2s;
+}
+
+.category-links a:hover {
+  color: var(--purple);
+  text-decoration: none;
+  background-color: var(--purple-muted);
+  border-radius: 3px;
+  padding-left: 5px;
+  margin-left: -5px; 
+}
+
+.red-dot {
+  color: var(--red);
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+/* Right Sidebar */
+.location-title, .section-title {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--purple);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  cursor: default;
+}
+
+.location-links li a {
+  padding: 5px 0;
+  display: block;
+  font-size: 14px;
+}
+
+.additional-sections h5 {
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.job-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Corrected .job-button */
+.job-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+  
+  background-color: var(--light-gray);
+  color: var(--purple);
+  border-color: var(--border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+
+  width: 100%; 
+}
+
+.job-button:hover {
+  background-color: var(--purple-muted);
+  border-color: var(--purple);
+  color: var(--purple-dark);
+  text-decoration: none;
+}
+
+
+/* ==============================
+    Footer
+================================= */
+.footer {
+  border-top: 1.5px solid var(--border);
+  padding: 30px 20px;
+  background: var(--light-gray); /* Uses --light-gray for header/footer */
+  margin-top: 50px;
+  width: 100%;  
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.footer-links a:hover {
+  color: var(--purple);
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ==============================
+    Responsive Design 
+================================= */
+/* Large screens: 3-column layout */
+@media (min-width: 1201px) {
+  .page-grid {
+    grid-template-columns: 250px 1fr 250px;
+  }
+}
+
+/* Medium screens: 2-column layout (hiding right sidebar) */
+@media (max-width: 1200px) {
+  .page-grid {
+    grid-template-columns: 200px 1fr; 
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .rightbar {
+    display: none; 
+  }
+
+  .center {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .global-header {
+    padding: 15px 20px;
+  }
+  
+  .search-container {
+    max-width: none; 
+  }
+}
+
+/* Tablet screens and smaller (Header stacking) */
+@media (max-width: 900px) { 
+  .global-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .header-left {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    flex-grow: 0; 
+  }
+  
+  .search-and-post-container {
+      width: 100%; 
+      flex-direction: row-reverse; 
+      justify-content: space-between;
+      order: 1; 
+  }
+  
+  .header-logo {
+      order: 2; 
+  }
+  
+  .header-right {
+    gap: 15px;
+    flex-wrap: wrap; 
+    justify-content: flex-end; 
+    width: 100%;
+    order: 2; 
+  }
+  
+  .search-container {
+    max-width: none; 
+  }
+}
+
+/* Mobile screens: 1-column grid */
+@media (max-width: 768px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .leftbar {
+    order: -1; 
+    margin-bottom: 20px;
+  }
+
+  .center {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .post-ad-btn {
+    font-size: 13px;
+    padding: 8px 15px;
+    min-width: 120px;
+  }
+}
+
+/* Small mobile screens (Further header collapse) */
+@media (max-width: 600px) {
+  /* Hide text-heavy elements to save space */
+  .user-actions, .language-selector {
+    display: none;
+  }
+  
+  .location-selector {
+      font-size: 12px;
+      padding: 5px;
+  }
+    
+  .header-right {
+    justify-content: center;
+  }
+    
+  .post-ad-btn {
+    min-width: 100px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+    
+  .header-left {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  .header-logo {
+      order: 0; 
+  }
+    
+  .search-and-post-container {
+      order: 1; 
+      flex-direction: row; 
+  }
+}

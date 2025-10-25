@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>craigslist.tr - Topluluk</title>
+    <meta name="description" content="Craigslist Topluluk (Community) Sayfası." />
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="js/sayfalar.js" defer></script>
+</head>
+<body class="homepage tr">
+ 
+    <header class="global-header">
+        <div class="header-left">
+            <a class="header-logo" href="../craiglist.html" aria-label="Craigslist Anasayfa">
+                <span class="peace-symbol">☮</span>
+                <span class="logo-text">Craigslist</span><span class="country-code">.tr</span>
+            </a>
+            
+            <div class="search-and-post-container">
+                <div class="search-container">
+                    <input type="text" placeholder="craigslist'te ara" class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <div class="location-selector" id="locationSelector">
+                <span class="location-icon">📍</span>
+                <span class="location-text">türkiye</span>
+                <span class="dropdown-arrow">▼</span>
+                
+                <div class="location-dropdown-menu">
+                    <h5 class="dropdown-title">Şehir Seçin</h5>
+                    <ul class="dropdown-links">
+                        <li><a href="#">istanbul</a></li>
+                        <li><a href="#">ankara</a></li>
+                        <li><a href="#">izmir</a></li>
+                        <li class="separator"></li>
+                        <li class="global-link"><a href="#">diğer lokasyonlar (global)</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="user-actions">
+                <div class="action-item" data-tooltip="Favoriler">
+                    <span class="action-icon">⭐</span>
+                    <span class="action-text">favoriler</span>
+                </div>
+                <div class="action-item" data-tooltip="Hesap">
+                    <span class="action-icon">👤</span>
+                    <span class="action-text">hesap</span>
+                </div>
+            </div>
+            <button class="dark-mode-toggle" id="darkModeToggle" data-tooltip="Koyu Mod">
+                🌙
+            </button>
+            <div class="language-selector">
+                <div class="custom-select-wrapper">
+                    <select>
+                        <option>türkçe</option>
+                        <option>english</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<main class="page-grid">
+    <aside class="leftbar">
+        
+        <div class="community-section">
+            <h3 class="category-title">iş ilanları</h3>
+              <div class="category-links">
+                <ul>
+                    <li><a href="#">bioteknoloji/mühendislik</a></li>
+                    <li><a href="#">devlet</a></li>
+                    <li><a href="#">eğitim öğretim</a></li>
+                    <li><a href="#">emlak</a></li>
+                    <li><a href="#">etc / misc</a></li>
+                    <li><a href="#">genel işçilik</a></li>
+                    <li><a href="#">güvenlik</a></li>
+                    <li><a href="#">hukuk</a></li>
+                    <li><a href="#">insan kaynakları</a></li>
+                    <li><a href="#">işletmecilik / yönetim</a></li>
+                    <li><a href="#">kuaför / spa / fitness</a></li>
+                    <li><a href="#">mimarlık / mühendislik</a></li>
+                    <li><a href="#">muhasebe+finans</a></li>
+                    <li><a href="#">müşteri hizmetleri</a></li>
+                    <li><a href="#">pazarlama/halkla ilişkiler</a></li>
+                    <li><a href="#">perakende / toptan</a></li>
+                    <li><a href="#">sanat / medya / tasarım</a></li>
+                    <li><a href="#">satış / iş geliştirme</a></li>
+                    <li><a href="#">sistem / network</a></li>
+                    <li><a href="#">sivil toplum sektoru</a></li>
+                    <li><a href="#">teknik destek</a></li>
+                    <li><a href="#">tıp / sağlık</a></li>
+                    <li><a href="#">tv / film / video</a></li>
+                    <li><a href="#">ulaşım</a></li>
+                    <li><a href="#">üretim</a></li>
+                    <li><a href="#">web / bilgi tasarımı</a></li>
+                    <li><a href="#">yazarlık / redaksiyon</a></li>
+                    <li><a href="#">yazılım / kalite güvence</a></li>
+                    <li><a href="#">yiyecek / içecek / otelcilik</a></li>
+                    <li><a href="#">yönetim / ofis</a></li>
+                    <li><a href="#">zanaat</a></li>
+                </ul>
+              </div>
+        
+    </aside>
+
+    </main>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
